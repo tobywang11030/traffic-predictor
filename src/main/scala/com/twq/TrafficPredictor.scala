@@ -106,7 +106,7 @@ object TrafficPredictor {
     }
 
     predictValue = predictValue.withColumn("time", formatTimestamp(col("time")))
-    predictValue.show(400)
+    predictValue.show(721)
 
     spark.stop()
   }
