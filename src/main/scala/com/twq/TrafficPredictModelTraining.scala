@@ -90,9 +90,9 @@ object TrafficPredictModelTraining {
       .setInputCols(training.drop(labelColumn).columns)
       .setOutputCol("features")
 
-    training = vectorAssembler.transform(training)
-    training.select("features").show(truncate = false)
-    /*testing = vectorAssembler.transform(testing)
+    //training = vectorAssembler.transform(training)
+    //training.select("features").show(truncate = false)
+    testing = vectorAssembler.transform(testing)
 
     // 4.3 构建线性回归模型
     val lr = new LinearRegression()
@@ -144,6 +144,6 @@ object TrafficPredictModelTraining {
     // 保存模型
     lrModel.write.save("hdfs://localhost:9000/toby/test")
 
-    spark.stop()*/
+    spark.stop()
   }
 }
